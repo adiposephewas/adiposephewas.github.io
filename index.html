@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="description"
         content="">
-  <meta name="keywords" content="RaLEs, radiology, NLP, NLU, NLG">
+  <meta name="keywords" content="Muscle, PheWAS, myopenia, myosteatosis, CT">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RaLEs: A Benchmark for Radiology Language Evaluations</title>
+  <title>Abdominal CT Metrics in 17,646 Patients Reveal Associations between Myopenia, Myosteatosis, and Medical Phenotypes: A Phenome-Wide Association Study</title>
   
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -57,21 +57,21 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://ralesbenchmark.github.io">
+      <a class="navbar-item" href="https://musclephewas.github.io">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
       </a>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          Leaderboard
+          Results Visualizations
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="#NLU_results">
-            RaLEs NLU
+          <a class="navbar-item" href="#SMI_results">
+            SMI
           </a>
-          <a class="navbar-item" href="#NLG_results">
-            RaLEs NLG
+          <a class="navbar-item" href="#SMD_results">
+            SMD
           </a>
         </div>
       </div>
@@ -99,29 +99,32 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">RaLEs: A Benchmark for Radiology Language Evaluations</h1>
+          <h1 class="title is-1 publication-title">Abdominal CT Metrics in 17,646 Patients Reveal Associations between Myopenia, Myosteatosis, and Medical Phenotypes: A Phenome-Wide Association Study</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://jmzam.github.io">Juan Manuel Zambrano Chaves</a><sup>1</sup>,</span>
             <span class="author-block">
-              Nandita Bhaskhar<sup>1</sup>,</span>
+              Leon Lenchik<sup>1</sup>,</span>
             <span class="author-block">
-              Maayane Attias<sup>1</sup>,
+              Isabel Gallegos<sup>1</sup>,
             </span>
             <span class="author-block">
-              Jean-Benoit Delbrouck<sup>1</sup>,
+              Louis Blankemeier<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Tie Liang<sup>1</sup>
             </span>
             <span class="author-block">
               Daniel Rubin<sup>1</sup>,
             </span>
             <span class="author-block">
-              Andreas Markus Loening<sup>1</sup>,
+              Marc Willis<sup>1</sup>,
             </span>
             <span class="author-block">
-              Curtis Langlotz<sup>1</sup>,
+              Akshay S Chaudhari<sup>1</sup>,
             </span>
             <span class="author-block">
-              Akshay S Chaudhari<sup>1</sup>
+              Robert D Boutin<sup>1</sup>,
             </span>
           </div>
 
@@ -133,7 +136,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
                <span class="link-block">
-                <a href="https://openreview.net/pdf?id=PWLGrvoqiR"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -141,20 +144,9 @@
                   <span>Paper</span>
                 </a>
               </span>
-<!--               <span class="link-block">
-                <a href="https://arxiv.org/abs/doesnotexist"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a> 
-              </span> -->
-              
-
               <!-- Code Link. --> 
               <span class="link-block">
-                <a href="https://github.com/StanfordMIMI/RaLEs"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -162,15 +154,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://vilmedic.app/datasets/papers"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
 
           </div>
@@ -188,19 +171,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce a benchmark group of datasets for natural language understanding and generation in radiology.
+            We identify associations between CT-derived biomarkers and hundreds of medical phenotypes.
           </p>
           <p>
-            The radiology report is the main form of communication between radiologists and other clinicians. 
-            Prior work in natural language processing in radiology reports has shown the value of developing methods tailored for individual tasks such as identifying reports with critical results or disease detection. 
-            Meanwhile, English and biomedical natural language understanding benchmarks such as the General Language Understanding and Evaluation as well as Biomedical Language Understanding and Reasoning Benchmark have 
-            motivated the development of models that can be easily adapted to address many tasks in those domains. 
-            Here, we characterize the radiology report as a distinct domain and introduce RaLEs, the Radiology Language Evaluations, as a benchmark for natural language understanding and generation in radiology. 
-            RaLEs is comprised of seven natural language understanding and generation evaluations including the extraction of anatomical and disease entities and their relations, procedure selection, and report summarization. 
-            We characterize the performance of models designed for the general, biomedical, clinical and radiology domains across these tasks. 
-            We find that advances in the general and biomedical domains do not necessarily translate to radiology, and that improved models from the general domain can perform comparably to smaller clinical-specific models. 
-            The limited performance of existing pre-trained models on RaLEs highlights the opportunity to improve domain-specific self-supervised models for natural language processing in radiology. 
-            We propose RaLEs as a benchmark to promote and track the development of such domain-specific radiology language models.
+            Background: Deep learning facilitates large-scale automated imaging evaluation of body composition. However, associations of body composition biomarkers with medical phenotypes have been underexplored. Phenome-wide association study (PheWAS) techniques search for medical phenotypes associated with biomarkers. A PheWAS integrating large-scale analysis of imaging biomarkers and electronic health record (EHR) data could discover previously unreported associations and validate expected associations. Here we use PheWAS methodology to determine the association of abdominal CT-based skeletal muscle metrics with medical phenotypes in a large North American cohort.
+Methods: An automated deep learning pipeline was used to measure skeletal muscle index (SMI; biomarker of myopenia) and skeletal muscle density (SMD; biomarker of myosteatosis) from abdominal CT scans of adults between 2012-2018. A PheWAS was performed with logistic regression using patient sex and age as covariates to assess for associations between CT-derived muscle metrics and 611 common EHR-derived medical phenotypes. PheWAS P values were considered significant at a Bonferroni corrected threshold (α=0.05/1222).
+Findings: 17,646 adults (mean age, 56 years +/- 19 [SD]; 57.5% women) were included. CT-derived SMI was significantly associated with 268 medical phenotypes; SMD with 340 medical phenotypes. Previously unreported associations with the highest magnitude of significance included higher SMI with decreased cardiac dysrhythmias (OR [95%CI], 0.59 [0.55-0.64]; P<0.0001), decreased epilepsy (OR, 0.59 [0.50-0.70]; P<0.0001), and increased elevated prostate-specific antigen (OR, 1.84 [1.47-2.31]; P<0.0001), and higher SMD with decreased decubitus ulcers (OR, 0.36 [0.31-0.42]; P<0.0001), sleep disorders (OR, 0.39 [0.32-0.47]; P<0.0001), and osteomyelitis (OR, 0.43 [0.36-0.52]; P<0.0001).
+Interpretation: PheWAS methodology reveals previously unreported associations between CT-derived biomarkers of myopenia and myosteatosis and EHR medical phenotypes. The high-throughput PheWAS technique applied on a population scale can generate research hypotheses related to myopenia and myosteatosis and can be adapted to research possible associations of other imaging biomarkers with hundreds of EHR medical phenotypes.
           </p>
         </div>
       </div>
@@ -209,301 +186,27 @@
   </div>
 </section>
 
-<section class="section" id="NLU_results">
+<section class="section" id="SMI_results">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-    <h2 class="title is-3">NLU Leaderboard</h2>
+    <h2 class="title is-3">SMI Results</h2>
     </div>
       <div class="table-container">
-        <table class="result-table tablesorter">
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>RG<sub>NER</sub>†</th>
-              <th>RG<sub>NER</sub>‡</th>
-              <th>RG<sub>RE</sub>†</th>
-              <th>RG<sub>RE</sub>‡</th>
-              <th>RadSpRL</th>
-              <th>Stanza</th>
-              <th>Procedure</th>
-              <th>NLU Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>BERT<sub>base</sub></td>
-              <td>93.0</td>
-              <td>86.3</td>
-              <td>82.7</td>
-              <td>70.6</td>
-              <td>91.2</td>
-              <td>83.7</td>
-              <td>65.4</td>
-              <td>81.8</td>
-            </tr>
-            <tr>
-              <td>BERT<sub>large</sub></td>
-              <td>92.6</td>
-              <td>88.5</td>
-              <td>82.0</td>
-              <td>71.4</td>
-              <td>85.3</td>
-              <td>85.4</td>
-              <td>64.9</td>
-              <td>81.4</td>
-            </tr>
-            <tr>
-              <td>RoBERTa<sub>base</sub></td>
-              <td>92.4</td>
-              <td>89.7</td>
-              <td>81.3</td>
-              <td>70.2</td>
-              <td>89.6</td>
-              <td>81.5</td>
-              <td>64.2</td>
-              <td>81.3</td>
-            </tr>
-            <tr>
-              <td>RoBERTa<sub>large</sub></td>
-              <td>92.7</td>
-              <td>89.7</td>
-              <td>83.0</td>
-              <td>73.1</td>
-              <td>82.1</td>
-              <td>83.0</td>
-              <td>64.9</td>
-              <td>81.2</td>
-            </tr>
-            <tr>
-              <td>ELECTRA<sub>small</sub></td>
-              <td>92.6</td>
-              <td>89.7</td>
-              <td>82.0</td>
-              <td>70.7</td>
-              <td>88.1</td>
-              <td>73.1</td>
-              <td>61.5</td>
-              <td>79.7</td>
-            </tr>
-            <tr>
-              <td>ELECTRA<sub>base</sub></td>
-              <td>93.2</td>
-              <td>85.9</td>
-              <td>83.2</td>
-              <td>71.9</td>
-              <td>89.9</td>
-              <td>85.2</td>
-              <td>64.4</td>
-              <td>82.0</td>
-            </tr>
-            <tr>
-              <td>ELECTRA<sub>large</sub></td>
-              <td>93.0</td>
-              <td>86.0</td>
-              <td>82.3</td>
-              <td>71.0</td>
-              <td>87.5</td>
-              <td>84.9</td>
-              <td>64.2</td>
-              <td>81.3</td>
-            </tr>
-            <tr>
-              <td>DeBERTa-V3<sub>base</sub></td>
-              <td>93.4</td>
-              <td>89.8</td>
-              <td><strong>84.6</strong></td>
-              <td>73.4</td>
-              <td>89.8</td>
-              <td>84.1</td>
-              <td>65.7</td>
-              <td>83.0</td>
-            </tr>
-            <tr>
-              <td>DeBERTa-V3<sub>large</sub></td>
-              <td>93.1</td>
-              <td>89.9</td>
-              <td>83.8</td>
-              <td>73.4</td>
-              <td>89.4</td>
-              <td>85.1</td>
-              <td>64.2</td>
-              <td>82.7</td>
-            </tr>
-            <tr>
-              <td>PubMedBERT</td>
-              <td>92.1</td>
-              <td>86.8</td>
-              <td>82.9</td>
-              <td>71.7</td>
-              <td>88.9</td>
-              <td>85.0</td>
-              <td>65.9</td>
-              <td>81.9</td>
-            </tr>
-            <tr>
-              <td>BioLinkBERT<sub>base</sub></td>
-              <td>93.2</td>
-              <td>90.6</td>
-              <td>83.6</td>
-              <td><strong>75.1</strong></td>
-              <td>91.0</td>
-              <td>83.7</td>
-              <td>65.7</td>
-              <td>83.3</td>
-            </tr>
-            <tr>
-              <td>BioLinkBERT<sub>large</sub></td>
-              <td>93.2</td>
-              <td>90.3</td>
-              <td>82.6</td>
-              <td>72.4</td>
-              <td>89.6</td>
-              <td>84.6</td>
-              <td>65.7</td>
-              <td>82.6</td>
-            </tr>
-            <tr>
-              <td>BioClinicalBERT</td>
-              <td>93.7</td>
-              <td>90.4</td>
-              <td>82.0</td>
-              <td>72.8</td>
-              <td>91.9</td>
-              <td><strong>85.6</strong></td>
-              <td>65.4</td>
-              <td>83.1</td>
-            </tr>
-            <tr>
-              <td>GatorTron</td>
-              <td>93.5</td>
-              <td>89.8</td>
-              <td>82.9</td>
-              <td>74.6</td>
-              <td><strong>92.0</strong></td>
-              <td>84.3</td>
-              <td><strong>66.7</strong></td>
-              <td><strong>83.4</strong></td>
-            </tr>
-            <tr>
-              <td>RadBERT<sub>1</sub></td>
-              <td>93.8</td>
-              <td>90.1</td>
-              <td>81.2</td>
-              <td>72.1</td>
-              <td>91.2</td>
-              <td>85.1</td>
-              <td>65.4</td>
-              <td>82.7</td>
-            </tr>
-            <tr>
-              <td>RadBERT<sub>2</sub></td>
-              <td><strong>94.0</strong></td>
-              <td><strong>90.7</strong></td>
-              <td>81.9</td>
-              <td>73.4</td>
-              <td>91.2</td>
-              <td>85.5</td>
-              <td>65.8</td>
-              <td>83.2</td>
-            </tr>
-            <!-- Add more rows for other models here -->
-            <!-- Add the last two rows as well -->
-          </tbody>
-        </table>
       </div>
       <div class="table-caption">
-        <p> †: MIMIC-CXR (in domain), ‡: CheXpert (out of domain), NER: named entity recognition, RE: relation extraction</a></p>
-        <!-- §: RadGraph, RadSpRL <a href="datta2020understanding">RadSpRL</a>, Stanza <a href="zhang2021stanza">Stanza -->
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="NLG_results">
+<section class="section" id="SMD_results">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-    <h2 class="title is-3">NLG Leaderboard</h2>
+    <h2 class="title is-3">SMD Results</h2>
     </div>
       <div class="table-container">
-        <table class="result-table tablesorter hover-hightlight">
-          <colgroup>
-            <col span="1" style="width: 10%;">
-            <col span="4" style="width: 20%;">
-            <col span="4" style="width: 20%;">
-            <col span="1" style="width: 10%;">
-          </colgroup>
-          <thead>
-            <tr>
-              <th rowspan="2">Model</th>
-              <th class="no-sort" colspan="4">MEDIQA 2021</td>
-              <th class="no-sort" colspan="4">BioNLP 2023</td>
-              <th rowspan="2">NLG Score</th>
-            </tr>
-            <tr>
-              <th>R-2</th>
-              <th>R-L</th>
-              <th>CheXbert</th>
-              <th>RG</th>
-              <th>R-2</th>
-              <th>R-L</th>
-              <th>CheXbert</th>
-              <th>RG</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ELECTRA<sub>base</sub></td>
-              <td>.238</td>
-              <td>.381</td>
-              <td>.710</td>
-              <td>.378</td>
-              <td>.156</td>
-              <td>.274</td>
-              <td>.441</td>
-              <td>.229</td>
-              <td>.316</td>
-            </tr>
-            <tr>
-              <td>BioLinkBERT<sub>base</sub></td>
-              <td>.245</td>
-              <td><b>.388</b></td>
-              <td><b>.725</b></td>
-              <td>.391</td>
-              <td>.183</td>
-              <td>.297</td>
-              <td>.500</td>
-              <td>.272</td>
-              <td>.337</td>
-            </tr>
-            <tr>
-              <td>GatorTron</td>
-              <td><b>.250</b></td>
-              <td>.386</td>
-              <td>.719</td>
-              <td><b>.406</b></td>
-              <td><b>.189</b></td>
-              <td><b>.303</b></td>
-              <td><b>.506</b></td>
-              <td><b>.283</b></td>
-              <td><b>.345</b></td>
-            </tr>
-            <tr>
-              <td>RadBERT<sub>2</sub></td>
-              <td>.237</td>
-              <td>.382</td>
-              <td>.709</td>
-              <td>.381</td>
-              <td>.184</td>
-              <td>.300</td>
-              <td>.487</td>
-              <td>.271</td>
-              <td>.334</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
       <div class="table-caption">
-      R-2: ROUGE-2, R-L: ROUGE-L, CheXbert: CheXbert score, RG: F1 RadGraph score
       </div>
     </div>
   </div>
@@ -514,13 +217,12 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{
-chaves2023rales,
-title={Ra{LE}s: a Benchmark for Radiology Language Evaluations},
-author={Juan Manuel Zambrano Chaves and Nandita Bhaskhar and Maayane Attias and Jean-Benoit Delbrouck and Daniel Rubin and Andreas Markus Loening and Curtis Langlotz and Akshay S Chaudhari},
-booktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-year={2023},
-url={https://openreview.net/forum?id=PWLGrvoqiR}
+    <pre><code>@article{
+zambranochaves2024abdominal,
+title={Abdominal CT Metrics in 17,646 Patients Reveal Associations between Myopenia, Myosteatosis, and Medical Phenotypes: A Phenome-Wide Association Study},
+author={Zambrano Chaves, Juan Manuel and Lenchik, Leon and Gallegos, Isabel and Blankemeier, Louis and Liang, Tie and Rubin, Daniel and Chaudhari, Akshay and Boutin, Robert},
+year={2024},
+url={}
 }</code></pre>
   </div>
 </section>
