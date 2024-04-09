@@ -1,16 +1,15 @@
-# RaLEs Benchmark
+# Muscle Phewas
 
-This is the repository that contains source code for the [RaLEs Benchmark website](https://ralesbenchmark.github.io).
+This is the repository that contains source code for the [Muscle PheWAS website](https://musclephewas.github.io).
 
-If you find RaLEs useful for your work please cite:
+If you find Muscle PheWAS useful for your work please cite:
 ```
-@inproceedings{
-chaves2023rales,
-title={Ra{LE}s: a Benchmark for Radiology Language Evaluations},
-author={Juan Manuel Zambrano Chaves and Nandita Bhaskhar and Maayane Attias and Jean-Benoit Delbrouck and Daniel Rubin and Andreas Markus Loening and Curtis Langlotz and Akshay S Chaudhari},
-booktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-year={2023},
-url={https://openreview.net/forum?id=PWLGrvoqiR}
+@article{
+zambranochaves2024phewas,
+title={},
+author={},
+year={2024},
+url={}
 }
 ```
 
