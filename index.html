@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="RaLEs, radiology, NLP, NLU, NLG">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RaLEs: A Benchmark for Radiology Language Evaluations</title>
+  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/tablesorter.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script src="./static/js/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  
+  
+  <script src="./static/js/fontawesome.all.min.js"></script>
+  <script type="text/javascript" src="./static/js/jquery.tablesorter.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://ralesbenchmark.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Leaderboard
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="#NLU_results">
+            RaLEs NLU
+          </a>
+          <a class="navbar-item" href="#NLG_results">
+            RaLEs NLG
+          </a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://scholar.google.com/citations?user=ngMOlmYAAAAJ&hl=en">
+            Juan Manuel's Google Scholar
+          </a>
+          <a class="navbar-item" href="https://med.stanford.edu/mimi.html">
+            Stanford MIMI
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">RaLEs: A Benchmark for Radiology Language Evaluations</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jmzam.github.io">Juan Manuel Zambrano Chaves</a><sup>1</sup>,</span>
+            <span class="author-block">
+              Nandita Bhaskhar<sup>1</sup>,</span>
+            <span class="author-block">
+              Maayane Attias<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Jean-Benoit Delbrouck<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Daniel Rubin<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Andreas Markus Loening<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Curtis Langlotz<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Akshay S Chaudhari<sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Stanford University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+               <span class="link-block">
+                <a href="https://openreview.net/pdf?id=PWLGrvoqiR"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+<!--               <span class="link-block">
+                <a href="https://arxiv.org/abs/doesnotexist"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a> 
+              </span> -->
+              
+
+              <!-- Code Link. --> 
+              <span class="link-block">
+                <a href="https://github.com/StanfordMIMI/RaLEs"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://vilmedic.app/datasets/papers"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We introduce a benchmark group of datasets for natural language understanding and generation in radiology.
+          </p>
+          <p>
+            The radiology report is the main form of communication between radiologists and other clinicians. 
+            Prior work in natural language processing in radiology reports has shown the value of developing methods tailored for individual tasks such as identifying reports with critical results or disease detection. 
+            Meanwhile, English and biomedical natural language understanding benchmarks such as the General Language Understanding and Evaluation as well as Biomedical Language Understanding and Reasoning Benchmark have 
+            motivated the development of models that can be easily adapted to address many tasks in those domains. 
+            Here, we characterize the radiology report as a distinct domain and introduce RaLEs, the Radiology Language Evaluations, as a benchmark for natural language understanding and generation in radiology. 
+            RaLEs is comprised of seven natural language understanding and generation evaluations including the extraction of anatomical and disease entities and their relations, procedure selection, and report summarization. 
+            We characterize the performance of models designed for the general, biomedical, clinical and radiology domains across these tasks. 
+            We find that advances in the general and biomedical domains do not necessarily translate to radiology, and that improved models from the general domain can perform comparably to smaller clinical-specific models. 
+            The limited performance of existing pre-trained models on RaLEs highlights the opportunity to improve domain-specific self-supervised models for natural language processing in radiology. 
+            We propose RaLEs as a benchmark to promote and track the development of such domain-specific radiology language models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section" id="NLU_results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">NLU Leaderboard</h2>
+    </div>
+      <div class="table-container">
+        <table class="result-table tablesorter">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>RG<sub>NER</sub>†</th>
+              <th>RG<sub>NER</sub>‡</th>
+              <th>RG<sub>RE</sub>†</th>
+              <th>RG<sub>RE</sub>‡</th>
+              <th>RadSpRL</th>
+              <th>Stanza</th>
+              <th>Procedure</th>
+              <th>NLU Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BERT<sub>base</sub></td>
+              <td>93.0</td>
+              <td>86.3</td>
+              <td>82.7</td>
+              <td>70.6</td>
+              <td>91.2</td>
+              <td>83.7</td>
+              <td>65.4</td>
+              <td>81.8</td>
+            </tr>
+            <tr>
+              <td>BERT<sub>large</sub></td>
+              <td>92.6</td>
+              <td>88.5</td>
+              <td>82.0</td>
+              <td>71.4</td>
+              <td>85.3</td>
+              <td>85.4</td>
+              <td>64.9</td>
+              <td>81.4</td>
+            </tr>
+            <tr>
+              <td>RoBERTa<sub>base</sub></td>
+              <td>92.4</td>
+              <td>89.7</td>
+              <td>81.3</td>
+              <td>70.2</td>
+              <td>89.6</td>
+              <td>81.5</td>
+              <td>64.2</td>
+              <td>81.3</td>
+            </tr>
+            <tr>
+              <td>RoBERTa<sub>large</sub></td>
+              <td>92.7</td>
+              <td>89.7</td>
+              <td>83.0</td>
+              <td>73.1</td>
+              <td>82.1</td>
+              <td>83.0</td>
+              <td>64.9</td>
+              <td>81.2</td>
+            </tr>
+            <tr>
+              <td>ELECTRA<sub>small</sub></td>
+              <td>92.6</td>
+              <td>89.7</td>
+              <td>82.0</td>
+              <td>70.7</td>
+              <td>88.1</td>
+              <td>73.1</td>
+              <td>61.5</td>
+              <td>79.7</td>
+            </tr>
+            <tr>
+              <td>ELECTRA<sub>base</sub></td>
+              <td>93.2</td>
+              <td>85.9</td>
+              <td>83.2</td>
+              <td>71.9</td>
+              <td>89.9</td>
+              <td>85.2</td>
+              <td>64.4</td>
+              <td>82.0</td>
+            </tr>
+            <tr>
+              <td>ELECTRA<sub>large</sub></td>
+              <td>93.0</td>
+              <td>86.0</td>
+              <td>82.3</td>
+              <td>71.0</td>
+              <td>87.5</td>
+              <td>84.9</td>
+              <td>64.2</td>
+              <td>81.3</td>
+            </tr>
+            <tr>
+              <td>DeBERTa-V3<sub>base</sub></td>
+              <td>93.4</td>
+              <td>89.8</td>
+              <td><strong>84.6</strong></td>
+              <td>73.4</td>
+              <td>89.8</td>
+              <td>84.1</td>
+              <td>65.7</td>
+              <td>83.0</td>
+            </tr>
+            <tr>
+              <td>DeBERTa-V3<sub>large</sub></td>
+              <td>93.1</td>
+              <td>89.9</td>
+              <td>83.8</td>
+              <td>73.4</td>
+              <td>89.4</td>
+              <td>85.1</td>
+              <td>64.2</td>
+              <td>82.7</td>
+            </tr>
+            <tr>
+              <td>PubMedBERT</td>
+              <td>92.1</td>
+              <td>86.8</td>
+              <td>82.9</td>
+              <td>71.7</td>
+              <td>88.9</td>
+              <td>85.0</td>
+              <td>65.9</td>
+              <td>81.9</td>
+            </tr>
+            <tr>
+              <td>BioLinkBERT<sub>base</sub></td>
+              <td>93.2</td>
+              <td>90.6</td>
+              <td>83.6</td>
+              <td><strong>75.1</strong></td>
+              <td>91.0</td>
+              <td>83.7</td>
+              <td>65.7</td>
+              <td>83.3</td>
+            </tr>
+            <tr>
+              <td>BioLinkBERT<sub>large</sub></td>
+              <td>93.2</td>
+              <td>90.3</td>
+              <td>82.6</td>
+              <td>72.4</td>
+              <td>89.6</td>
+              <td>84.6</td>
+              <td>65.7</td>
+              <td>82.6</td>
+            </tr>
+            <tr>
+              <td>BioClinicalBERT</td>
+              <td>93.7</td>
+              <td>90.4</td>
+              <td>82.0</td>
+              <td>72.8</td>
+              <td>91.9</td>
+              <td><strong>85.6</strong></td>
+              <td>65.4</td>
+              <td>83.1</td>
+            </tr>
+            <tr>
+              <td>GatorTron</td>
+              <td>93.5</td>
+              <td>89.8</td>
+              <td>82.9</td>
+              <td>74.6</td>
+              <td><strong>92.0</strong></td>
+              <td>84.3</td>
+              <td><strong>66.7</strong></td>
+              <td><strong>83.4</strong></td>
+            </tr>
+            <tr>
+              <td>RadBERT<sub>1</sub></td>
+              <td>93.8</td>
+              <td>90.1</td>
+              <td>81.2</td>
+              <td>72.1</td>
+              <td>91.2</td>
+              <td>85.1</td>
+              <td>65.4</td>
+              <td>82.7</td>
+            </tr>
+            <tr>
+              <td>RadBERT<sub>2</sub></td>
+              <td><strong>94.0</strong></td>
+              <td><strong>90.7</strong></td>
+              <td>81.9</td>
+              <td>73.4</td>
+              <td>91.2</td>
+              <td>85.5</td>
+              <td>65.8</td>
+              <td>83.2</td>
+            </tr>
+            <!-- Add more rows for other models here -->
+            <!-- Add the last two rows as well -->
+          </tbody>
+        </table>
+      </div>
+      <div class="table-caption">
+        <p> †: MIMIC-CXR (in domain), ‡: CheXpert (out of domain), NER: named entity recognition, RE: relation extraction</a></p>
+        <!-- §: RadGraph, RadSpRL <a href="datta2020understanding">RadSpRL</a>, Stanza <a href="zhang2021stanza">Stanza -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="NLG_results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">NLG Leaderboard</h2>
+    </div>
+      <div class="table-container">
+        <table class="result-table tablesorter hover-hightlight">
+          <colgroup>
+            <col span="1" style="width: 10%;">
+            <col span="4" style="width: 20%;">
+            <col span="4" style="width: 20%;">
+            <col span="1" style="width: 10%;">
+          </colgroup>
+          <thead>
+            <tr>
+              <th rowspan="2">Model</th>
+              <th class="no-sort" colspan="4">MEDIQA 2021</td>
+              <th class="no-sort" colspan="4">BioNLP 2023</td>
+              <th rowspan="2">NLG Score</th>
+            </tr>
+            <tr>
+              <th>R-2</th>
+              <th>R-L</th>
+              <th>CheXbert</th>
+              <th>RG</th>
+              <th>R-2</th>
+              <th>R-L</th>
+              <th>CheXbert</th>
+              <th>RG</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ELECTRA<sub>base</sub></td>
+              <td>.238</td>
+              <td>.381</td>
+              <td>.710</td>
+              <td>.378</td>
+              <td>.156</td>
+              <td>.274</td>
+              <td>.441</td>
+              <td>.229</td>
+              <td>.316</td>
+            </tr>
+            <tr>
+              <td>BioLinkBERT<sub>base</sub></td>
+              <td>.245</td>
+              <td><b>.388</b></td>
+              <td><b>.725</b></td>
+              <td>.391</td>
+              <td>.183</td>
+              <td>.297</td>
+              <td>.500</td>
+              <td>.272</td>
+              <td>.337</td>
+            </tr>
+            <tr>
+              <td>GatorTron</td>
+              <td><b>.250</b></td>
+              <td>.386</td>
+              <td>.719</td>
+              <td><b>.406</b></td>
+              <td><b>.189</b></td>
+              <td><b>.303</b></td>
+              <td><b>.506</b></td>
+              <td><b>.283</b></td>
+              <td><b>.345</b></td>
+            </tr>
+            <tr>
+              <td>RadBERT<sub>2</sub></td>
+              <td>.237</td>
+              <td>.382</td>
+              <td>.709</td>
+              <td>.381</td>
+              <td>.184</td>
+              <td>.300</td>
+              <td>.487</td>
+              <td>.271</td>
+              <td>.334</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-caption">
+      R-2: ROUGE-2, R-L: ROUGE-L, CheXbert: CheXbert score, RG: F1 RadGraph score
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{
+chaves2023rales,
+title={Ra{LE}s: a Benchmark for Radiology Language Evaluations},
+author={Juan Manuel Zambrano Chaves and Nandita Bhaskhar and Maayane Attias and Jean-Benoit Delbrouck and Daniel Rubin and Andreas Markus Loening and Curtis Langlotz and Akshay S Chaudhari},
+booktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+year={2023},
+url={https://openreview.net/forum?id=PWLGrvoqiR}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/JMZAM" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website style was adapted from the <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> website under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>
+          </p>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+  
+</footer>
+
+</body>
+</html>
