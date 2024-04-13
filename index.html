@@ -35,6 +35,9 @@
   
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <script src="./static/js/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
 
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -72,6 +75,9 @@
           </a>
           <a class="navbar-item" href="#SMD_results">
             SMD
+          </a>
+          <a class="navbar-item" href="#SMI_SMD_results">
+            Overall
           </a>
         </div>
       </div>
@@ -172,7 +178,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We identify associations between CT-derived biomarkers and hundreds of medical phenotypes.
+            We identify associations between CT-derived biomarkers of muscle and hundreds of medical phenotypes.
           </p>
           <p>
             <b>Background:</b> Deep learning facilitates large-scale automated imaging evaluation of body composition. However, associations of body composition biomarkers with medical phenotypes have been underexplored. Phenome-wide association study (PheWAS) techniques search for medical phenotypes associated with biomarkers. A PheWAS integrating large-scale analysis of imaging biomarkers and electronic health record (EHR) data could discover previously unreported associations and validate expected associations. Here we use PheWAS methodology to determine the association of abdominal CT-based skeletal muscle metrics with medical phenotypes in a large North American cohort.
@@ -190,7 +196,7 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
+    
   </div>
 </section>
 
@@ -199,10 +205,17 @@
     <div class="columns is-centered has-text-centered">
     <h2 class="title is-3">SMI Results</h2>
     </div>
-      <div class="table-container">
+    <div class="iframe-container">
+    <iframe src="fig2.html" class="responsive-iframe"></iframe>
+    </div>
+    <div class="iframe-container">
+    <iframe src="fig3.html" class="responsive-iframe"></iframe>
+    </div>
+      <!-- <div class="table-container">
+
       </div>
       <div class="table-caption">
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -212,14 +225,27 @@
     <div class="columns is-centered has-text-centered">
     <h2 class="title is-3">SMD Results</h2>
     </div>
-      <div class="table-container">
-      </div>
-      <div class="table-caption">
-      </div>
+      <div class="iframe-container">
+    <iframe src="fig4.html" class="responsive-iframe"></iframe>
+    </div>
+    <div class="iframe-container">
+    <iframe src="fig5.html" class="responsive-iframe"></iframe>
+    </div>
     </div>
   </div>
 </section>
-
+<section class="section" id="SMI_SMD_results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+    <h2 class="title is-3">Overall Results</h2>
+    </div>
+      <div class="iframe-container">
+    <iframe src="fig.html" class="responsive-iframe"></iframe>
+    </div>
+    
+    </div>
+  </div>
+</section>
 
 
 <section class="section" id="BibTeX">
