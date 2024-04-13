@@ -156,12 +156,16 @@ body {
   border-radius: 5px;
 }
 /* Style for the table */
-.table-container {
-  display: flex;
+@media (max-width: 768 px){
+  .table-container {
+/*  display: flex;*/
   justify-content: center;
   align-items: center;
-  overflow: auto; /* Adjust this value as needed */
+  overflow: auto;
+
 }
+}
+
 .result-table {
   width: 100%;
   overflow-x: auto;
@@ -239,3 +243,8 @@ body {
     height: 100%;
     border: none;
 }
+
+
+.narrow { width: 10%; }
+.medium { width: 15%; }
+.wide { width: 20%; }
