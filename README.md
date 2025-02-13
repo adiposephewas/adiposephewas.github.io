@@ -1,6 +1,6 @@
-# Muscle Phewas
-
-This is the repository that contains source code for the [Muscle PheWAS website](https://musclephewas.github.io).
+# Adipose Phewas
+**NOTE: This repository is under construction**
+This is the repository that contains source code for the [Adipose PheWAS website](https://adiposephewas.github.io).
 
 If you find Muscle PheWAS useful for your work please cite:
 ```
